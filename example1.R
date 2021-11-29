@@ -32,7 +32,7 @@ Obs_hat[Obs_pos] <- Obs_freq
 
 unif_lik <- 1 - sum(abs(Obs_hat - rep(1/4, 4)))
 
-base_rates <- c(1/4, 1.9/4, 0.1/4, 1/4)
+base_rates <- c(1/4, 1.7/4, 0.3/4, 1/4)
 # accurate base rates
 #base_rates <- c(1/4, 0.1/4, 1.9/4, 1/4)
 base_rates_lik <- 1 - sum(abs(Obs_hat - base_rates))
@@ -42,4 +42,6 @@ post_base_rates <- base_rates_lik * base_rates_prior
 
 unif_prior * log(post_unif/unif_prior, base=2)
 base_rates_prior * log(post_base_rates/base_rates_prior, base=2)
+
+
 
